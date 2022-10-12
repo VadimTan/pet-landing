@@ -1,0 +1,70 @@
+body, html {
+    padding: 0;
+    margin: 0;
+  }
+  
+  section { 
+    padding: 60px 0;
+    display: flex;
+  }
+  
+  .section-one {
+    .section-one-child {
+      flex: 1;
+      
+      &.child-one {
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      
+      &.child-two {
+        padding-left: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        h2 {
+          font-size: 36px;
+          margin: 0;
+        }
+        
+        .hr {
+          height: 6px;
+          width: 80px;
+          background: orange;
+          border-radius: 3px;
+          border: 0;
+          display: inline-block;
+        }
+        
+        p {
+          font-size: 14px;
+          letter-spacing: 3px;
+          margin: 0;
+          
+        }
+        
+        button {
+          background: orange;
+          border-radius: 5px;
+          font-weight: bold;
+          border: 2px solid #f4a261;
+          cursor: pointer;
+          transition: 0.3s ease-in-out;
+          width: 200px;
+          padding: 10px 0;
+          
+          &:hover {
+            background: #e9c46a;
+            box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.1)
+          }
+        }
+      }
+    }
+    
+    
+    
+  }
+  
