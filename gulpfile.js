@@ -23,14 +23,7 @@ gulp.task('js', function(){
 }); 
 
 gulp.task('html', function(){
-    return gulp.src('src/index.html')
-    .pipe(sass())
-    .pipe(cssnano())
-    .pipe(gulp.dest('dist/html'))
-});
-
-gulp.task('html', function(){
-    return gulp.src('src/index.html')
+return gulp.src('src/index.html')
     .pipe(sass())
     .pipe(cssnano())
     .pipe(gulp.dest('dist/html'))
@@ -43,26 +36,12 @@ gulp.task('images', function() {
       .pipe(gulp.dest('dist/assets/images'))
   });
 
-
-// 1
-
-function js(){
-    watch('src/*.js', series(js)).on('change', function(path, stats) {
-        console.log(`File ${path} was changed`);
-    });
-}
-
-function html(){
-    watch('src/*.html', series(html)).on('change', function(path, stats) {
-        console.log(`File ${path} was changed`);
-    });
-}
-    
-function scss(){
-    watch('src/assets/scss/*.scss', series(scss)).on('change', function(path, stats) {
-    console.log(`File ${path} was changed`);
+  gulp.task('watch', function() {
+    gulp.watch('src/*.js', gulp.series('js'));
+    gulp.watch('src/assets/scss/*.scss', gulp.series('sass'));
 });
-}
 
-exports.watch = gulp.series(js, html, scss);
+gulp.task('default', gulp.series(['watch']));
+
+
 
